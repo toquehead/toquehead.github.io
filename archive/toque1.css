@@ -1,0 +1,77 @@
+
+body
+{
+    font-family: tahoma, arial;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #003399;
+}
+
+body.touch, body.touch table {
+    font-size: 16px;
+}
+
+h1
+{
+    font-size: larger;
+    font-weight: bold;
+}
+
+A:link, A:visited, A:active
+{
+    font-weight: normal;
+    color: #FFCC00;
+    text-decoration: none;
+}
+A:hover
+{
+    text-decoration: underline;
+}
+A.pivot:hover, A.pivot:link, A.pivot:visited, A.pivot:active
+{
+    text-decoration: none;
+    color: #FFFF00;
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+table.list, table.sublist {
+    padding: 1px;
+}
+
+body.touch table.list > tbody > tr > td {
+    padding-top: 5px;
+}
+
+td.subhead
+{
+    color: #ffffff;
+    font-family: Verdana, Arial, Helvetica;
+    background-color: #003366
+}
+
+body.touch table.list, body.touch table.sublist td {
+    padding: 5px 1px 5px 1px;
+}
+
+.hide
+{
+    display: none;
+}
+.show
+{
+    display: block;
+}
+.pivot
+{
+    text-decoration: none
+}
+.tiny
+{
+    font-size: 4pt;
+}

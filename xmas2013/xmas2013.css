@@ -1,0 +1,63 @@
+
+/*body, p, td, h1*/
+body
+{
+    background: url(images/holly-dark.png);
+    background-color: black;
+    background-repeat:repeat-y;
+    color: #ffffff;
+    margin-left: 0px;
+}
+/* td seems to not inherit font properties */
+td
+{
+    font-weight: normal;
+    font-family: comic sans ms, arial, tahoma;
+    font-size: 14pt;
+}
+h1
+{
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    color: #cc0000;
+}
+img
+{
+    border-color: #000000;
+    width: 800px;
+}
+A:link, A:visited, A:active
+{
+    COLOR: #339900;
+}
+A:hover
+{
+    COLOR: red;
+    TEXT-DECORATION: none;
+}
+.caption
+{
+	font-size: smaller;
+	font-style: italic;
+	color: #aaaaaa;
+    TEXT-ALIGN: center;
+}
+.quote
+{
+	FONT-SIZE: 16pt;
+	FONT-WEIGHT: normal;
+	FONT-STYLE: italic;
+    COLOR: #aaaaaa;
+}
+.subhead
+{
+	FONT-SIZE: 12pt;
+    FONT-WEIGHT: normal;
+}
+.nodec
+{
+    TEXT-DECORATION: none;
+}

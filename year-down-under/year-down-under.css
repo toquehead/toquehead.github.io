@@ -1,0 +1,53 @@
+
+/*body, p, td, h1*/
+body
+{
+    background-color: black;
+    color: #bbbbbb;
+    font-weight: normal;
+    font-family: comic sans ms, arial, tahoma;
+    font-size: 11pt;
+    margin-left: 20px;
+}
+
+h1
+{
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+p
+{
+    text-align: left;
+}
+
+div.container
+{
+    width: 1000px;
+}
+
+p.alternate-show
+{
+    font-size: 85%;
+    margin-top: 30px;
+}
+
+.caption
+{
+	font-style: italic;
+    text-align: center;
+}
+
+a:link, a:visited, a:active
+{
+    COLOR: #339900;
+}
+a:hover
+{
+    COLOR: red;
+    TEXT-DECORATION: none;
+}
+

@@ -1,0 +1,18 @@
+body, h1, td
+{
+    font-size: 54px;
+    line-height: 75px;
+}
+h1
+{
+    font-size: 75px;
+}
+
+body.touch table.list, body.touch table.sublist td {
+    padding: 5px 1px 5px 1px;
+}
+
+.tiny
+{
+    font-size: 25px;
+}

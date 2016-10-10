@@ -1,0 +1,22 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C1C54A02-E5E8-44B2-B9B4-D1F6DE05B432}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+		xmas2012.css = xmas2012.css
+		xmas2012.html = xmas2012.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{7A55B11F-2107-4C83-B75A-1F29DA2D4A0A}"
+	ProjectSection(SolutionItems) = preProject
+		images\mystics-beach.jpg = images\mystics-beach.jpg
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A55B11F-2107-4C83-B75A-1F29DA2D4A0A} = {C1C54A02-E5E8-44B2-B9B4-D1F6DE05B432}
+	EndGlobalSection
+EndGlobal

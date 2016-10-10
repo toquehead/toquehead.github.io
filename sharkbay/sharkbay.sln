@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		Item:1 = notes.txt
+		Item:2 = sharkbay.html
+		Item:3 = sharkbayroutemap.html
+		Item:4 = sharkbaytravel.html
+		Item:5 = ..\trips.css
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

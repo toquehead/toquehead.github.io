@@ -1,0 +1,41 @@
+BODY, P, TD{    FONT-FAMILY: tahoma, comic sans ms, arial;    FONT-SIZE: 13pt;    FONT-WEIGHT: normal;    COLOR: #aaaaaa;    BACKGROUND-COLOR: #000000;}
+IMG{    border-color: #ffffff;}A:link, A:visited, A:active{    FONT-WEIGHT: normal;    COLOR: #FF9933;}A:hover{    COLOR: red;    TEXT-DECORATION: none}
+.nodec{    TEXT-DECORATION: none;}.title{
+    FONT-SIZE: 25pt;
+    FONT-WEIGHT: bold;    TEXT-ALIGN: center;
+    PADDING-BOTTOM: 25px;    PADDING-TOP: 0px;    COLOR: #cc0000;}
+.title_nobreak
+{
+	font-weight: bold;
+	font-size: 25pt;
+	padding-bottom: 0px;
+	color: #cc0000;
+	padding-top: 0px;
+	text-align: center;
+}
+.subtitle{
+    FONT-SIZE: 16pt;
+    FONT-WEIGHT: normal;    TEXT-ALIGN: center;
+    PADDING-BOTTOM: 25px;    PADDING-TOP: 0px;    COLOR: #cc0000;}
+.caption{
+    FONT-SIZE: 11pt;
+    font-style: italic;
+	font-weight: bold;
+    TEXT-ALIGN: center;
+	color: #cccccc;
+}
+.subcaption{
+    FONT-SIZE: 10pt;
+	font-weight: bold;
+    TEXT-ALIGN: center;
+	color: #cccccc;
+}
+.section
+{
+	color: #cccccc;
+	font-weight: bold;
+}
+.close_win
+{
+	font-size: 11pt;
+}

@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0px;
+}
+
+body
+{
+    font-family: tahoma, arial;
+    font-size: 14px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #FFF;
+    margin: 0px;
+}
+
+body.touch, body.touch table {
+    font-size: 16px;
+}
+
+body.large, body.large * {
+    font-size: 54px;
+    line-height: 75px;
+}
+
+h1
+{
+    font-size: larger;
+    font-weight: bold;
+}
+
+a:link, a:visited, a:active
+{
+    font-weight: normal;
+    color: #FFCC00;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+a.pivot:hover, a.pivot:link, a.pivot:visited, a.pivot:active
+{
+    text-decoration: none;
+    color: #FFFF00;
+}
+
+body.touch a.link:hover, body.touch a.link:active {
+    background-color: rgba(255, 204, 0, 0.4);
+    text-decoration: none;
+}
+
+img.toggle {
+    border: 0;
+    padding-right: 3px;
+    width: 12px;
+    height: 12px;
+}
+body.large img.toggle {
+    padding-right: 12px;
+    width: 48px;
+    height: 48px;
+}
+
+table {
+    border: 0;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+html, body, #frame, #target-div, #target-iframe, div.index, td.target {
+    height: 100%;
+}
+
+#frame, td.target, #target-iframe {
+    width: 100%;
+}
+
+#target-iframe {
+    display: block;
+}
+
+table.index {
+    padding: 1px;
+}
+
+td.index {
+    background-color: #003399;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+div.index {
+    display: inherit;
+    overflow: auto;
+    padding-left: 0.5em;
+    padding-right: 0.75em;
+}
+
+td.target {
+    padding: 0;
+}
+
+body.large td.target {
+    display: none;
+}
+
+td.sublist {
+    padding: 0;
+}
+
+body.touch div.index {
+    padding-right: 5px;
+}
+
+tr.spacer {
+    font-size: 25%;
+}
+
+body.touch table.index td, body.touch table.sublist td {
+    padding: 5px 1px 5px 1px;
+}
+
+.pivot
+{
+    text-decoration: none
+}

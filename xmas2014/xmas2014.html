@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasons Greetings from The Antipodes</title>
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link href="xmas2014.css" type="text/css" rel="stylesheet" />
+    <link href="../styles/redmond/jquery-ui-1.8.18.custom.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../scripts/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-ui-1.8.18.custom.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#divPopup').dialog({
+                autoOpen: false,
+                resizable: false,
+                modal: true,
+                position: { my: "center", at: "center", of: window },
+                //show: 800,
+                minHeight: 300,
+                minWidth: 650,
+                dialogClass: 'black',
+                width: 'auto'
+            });
+
+            $('div#letter img').each(function (i, img) {
+                var alt = img.getAttribute('alt');
+                if (alt)
+                    $(img).after('<p class="caption">' + alt + '</p>');
+            });
+        });
+
+        // Once page is fully rendered, prefetch linked images
+        $(window).on('load', function () {
+            var regex = new RegExp(".*\'(.*?\.jpg)\'", "i");
+
+            $('#letter a').each(function (i, a) {
+                var url = $(a).attr('onclick').match(regex)[1];
+                if (url) {
+                    $('<img />').attr('src', 'images/' + url);
+                }
+            });
+        });
+
+        function pop(a, url, title, caption, event) {
+            if (caption && caption.srcElement) {
+                event = caption;
+                caption = null;
+            }
+            caption = caption || (title + '.');
+
+            $('#imgPopup')
+                .on('load', function () {
+                    $('#caption').html(caption);
+                    $('#divPopup')
+                        .dialog('option', 'width', 'auto') // Is sometimes required with Chrome with a zoomed viewport
+                        .dialog('option', 'position', { my: "center", at: "center", of: window });
+                    //.dialog('option', 'position', { my: "left top", at: "center", of: event });
+                })
+                .attr('src', 'images/' + url);
+
+            window.setTimeout(function () {
+                var divClose = $('#dialogclose');
+                divClose.css('marginTop', '-' + divClose.height() + 'px');
+            }, 0);
+
+            $('#divPopup')
+                .dialog('option', 'title', title)
+                .dialog('open');
+
+            $('div.ui-widget-overlay').on('click', function () { $('#divPopup').dialog('close'); });
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div id="letter">
+        <h1>Seasons Greetings from The Antipodes</h1>
+
+        <p>
+            It is our third festive season Down Under, and the sounds of Christmas carols under a baking Australian sun is just as discombobulating as ever. However, after so many years of obsessively tracking the fall weather systems in the Gulf of Alaska, the habit endures, and since we've been checking out the snow conditions back “home” for a while now, it must be time to put the annual Xmas letter together.
+        </p>
+
+        <p class="center"><img alt="Sunset at Paddle Bay, Whitsunday Islands" src="images/paddle-bay-sunset-2.jpg" /></p>
+
+        <p>
+            It was another whirlwind year living homeless in this magical land. We started the year house sitting Rose and Andrew's lovely garden home in
+            <a href="#" onclick="return pop(this, 'cairns_from_cessna.jpg', 'Cairns', event);">Cairns</a>
+            in Far North Queensland. The North Queensland wet season has quite a reputation, and we were prepared for the worst, but in truth, it wasn't nearly as painful as imagined. It was hot and sticky, but not too bad, and we slept well every night without air conditioning. Camping was out of the question, but with
+            <a href="#" onclick="return pop(this, 'sandy-toomulla.jpg', 'Stinger Suit Fashion', 'Sandy sporting the latest in stinger suit fashions.', event);">stinger suits</a>
+            on, we continued to paddle our yaks in the warm waters of the
+            <a href="#" onclick="return pop(this, 'kev-dee-no-hands-trinity-bay.jpg', 'Kev and Dee in Trinity Bay', 'Kev and Dee in Trinity Bay. Dee is the one showing off. As usual.', event);">Coral Sea</a>
+            near Cairns. Doug also took the opportunity to do some work for his long-suffering client in Calgary.
+        </p>
+
+        <p class="center"><img alt="Paddling at dawn in the Whitsundays" src="images/sandy-dawn-crayfish-bay.jpg" /></p>
+
+        <p>
+            In January, we had a nice visit from Doug's cousin Kathy, her husband Gary, and daughter Emma. This makes two meetings in 20 years – this craziness has to stop.
+        </p>
+
+        <p class="center"><img alt="Doug and Kathy at Barren Falls (credit: Gary)" src="images/doug-kathy-barren-falls-by-gary.jpg" /></p>
+
+        <p>
+            Rose and Andrew returned from their trip down south in late March, so we said goodbye to all our new Cairns friends and headed off for some wonderful
+            <a href="#" onclick="return pop(this, 'sandy-sailing-to-rattlesnake.jpg', 'Sailing to Rattlesnake Island', event);">sea kayaking</a>
+            in the
+            <a href="#" onclick="return pop(this, 'bauer-bay-south-molle-island.jpg', 'Whitsunday Islands', 'Bauer Bay on South Molle Island in the Whitsundays', event);">Whitsundays</a>
+            and other 
+            <a href="#" onclick="return pop(this, 'rattlesnake-island-spit.jpg', 'Rattlesnake Island', 'Rattlesnake Island - the scene of the famous army attack.', event);">islands</a>
+            on the
+            <a href="#" onclick="return pop(this, 'townsville-from-mt-stuart.jpg', 'Townsville from Mt Stuart', event);">Townsville</a>
+            to Mackay section of the Queensland coast.
+        </p>
+
+        <p class="center"><img alt="Pinnacle Point, Hook Island, Whitsundays" src="images/sandy-pinnacle-point-hook-island-2.jpg" /></p>
+
+        <p>
+            In between trips, we were holed up in our little caravan in Bowen when the eye of cyclone Ita passed directly overhead. It was a good thing it had weakened from category 5 to category 1, as it was pretty exciting as it was, with very strong winds and intense rainfall – Doug went outside to move the car during the peak of the storm (in his bathing suit), and it can only be compared to standing under a fire hose – unbelievable.
+        </p>
+
+        <p class="center"><img alt="Sunset, Gloucester Island" src="images/sunset-gloucester-island.jpg" /></p>
+
+        <p>
+            Once the weather was looking like it was set up for a good long blow, we packed up the paddling gear and headed inland. The whole east coast of Australia is generally pretty green and hilly, but once you head inland, things change quickly. The Great Dividing Range gives way to the flats of outback Queensland and NSW, and the magnificent eucalypt and tropical forests give way to open woodland, savannah, and scrub.
+        </p>
+
+        <p class="center"><img alt="Boodjamulla Gorge" src="images/doug-kayak-boodjamulla-middle-gorge.jpg" /></p>
+
+        <p>
+            Outback Queensland and the Northern Territory are to home to some extraordinary places – imagine walking across a scorching hot savannah, disturbing a few
+            <a href="#" onclick="return pop(this, 'kangaroo-diamond-head.jpg', 'Kanga', event);">kangaroos</a>
+            and
+            <a href="#" onclick="return pop(this, 'skink-wilmington-2.jpg', 'Arrowhead lizard?', event);">lizards</a>,
+            passing by some ancient Aboriginal rock art
+        </p>
+
+        <p class="center"><img alt="Ubirr in Kakadu" src="images/ubirr-mabuyu-rock-art.jpg" /></p>
+
+        <p>
+            until you encounter a crystal clear
+            <a href="#" onclick="return pop(this, '17-mile-falls-jatbula-3.jpg', '17 Mile Falls', '17 Mile Falls on the Jatbula Trail', event);">waterfall</a>
+            cascading into a beautiful warm water
+            <a href="#" onclick="return pop(this, 'sandy-umbrawarra-2nd-pool.jpg', 'Umbrawarra Gorge', 'Sandy cooling off at Umbrawara Gorge.   ', event);">swimming hole</a>
+            rimmed by towering red rock cliffs
+        </p>
+
+        <p class="center"><img alt="Katherine Gorge" src="images/sandy-katherine-2nd-gorge-3.jpg" /></p>
+
+        <p>
+            and you'll have the right idea. Unfortunately, these oases are typically separated by long stretches of fascinating
+            <a href="#" onclick="return pop(this, 'sandy-bug-hat-barkly-tablelands.jpg', 'Barkly Tablelands, NT', event);">fly habitat</a>.
+        </p>
+
+        <p class="center"><img alt="Sandy enjoying another NT sunrise" src="images/sandy-katherine-8th-gorge-sunrise-2.jpg" /></p>
+
+        <p>
+            There is no winter in the lineup of NT seasons, only “the buildup”, “the wet” and “the dry”. The only time to visit is the dry, and that's when we went, but even though it is winter for the rest of the country it is by no means “the cool”. We experienced temperatures as hot as 36C in the coldest period of the year, although we also had long stretches of high 20s, which is as cold as it gets.
+        </p>
+
+        <p class="center"><img alt="A deep ford in Umbrawara Gorge - lucky the water is warm." src="images/sandy-umbrawarra-ford-pack-on-head.jpg" /></p>
+
+        <p>
+            We ambled our way north, exploring the gorges and waterfalls in our kayaks and on foot. Australia is famous for animal hazards: encounters with
+            <a href="#" onclick="return pop(this, 'green-tree-snake-hartleys.jpg', 'Green tree snake', event);">snakes</a>,
+            <a href="#" onclick="return pop(this, 'huntsman-spider-kent-island.jpg', 'Huntsman spider', event);">spiders</a>, jellyfish,
+            <a href="#" onclick="return pop(this, 'tiger-shark-smiddie.jpg', 'Baby tiger shark', event);">sharks</a>, and
+            <a href="#" onclick="return pop(this, 'crocodile-east-aligator-river-2.jpg', 'Croc', 'Croc on the East Aligator River, Kakadu.', event);">crocs</a>
+            being the popular ways to buy the farm. While playing up the dangers is a national passtime, I actually find Oz less threatening that the Frozen North: I'll take the snakes, spiders, and sharks over avalanches and grizzlies any day. Crocs, however, are a different story altogether. Swimming in a river with a known croc population is like slathering yourself in raw chicken guts and entering a lion cage full of felines who haven't been fed in two weeks. Any nearby salty will quickly remove you from the gene pool – no joking matter. Luckily the National Parks clears out the salties from certain rivers at the beginning of each dry season, and then declares them safe for paddling and swimming.
+        </p>
+
+        <p class="center"><img alt="Sandy Camp Pool on the Jatbula Trail" src="images/sandy-camp-pool-reflection.jpg" /></p>
+
+        <p>
+            After walking and paddling many iconic Australian gems such as
+            <a href="#" onclick="return pop(this, 'sandy-boodjamulla-middle-gorge-1.jpg', 'Boodjamulla Middle Gorge', 'Sandy enjoying a beautiful paddle at Boodjamulla', event);">Boodjamulla</a>,
+            <a href="#" onclick="return pop(this, 'katherine-gorge-smitts-rock-3.jpg', 'Katherine Gorge', event);">Katherine Gorge</a>,
+            <a href="#" onclick="return pop(this, 'crystal-falls-jatbula.jpg', 'Crystal Falls', 'Crystal Falls on the Jatbula Track', event);">Jatbula Track</a>, and
+            <a href="#" onclick="return pop(this, 'anbangbang-billabong-nourlangie.jpg', 'Kakadu', 'Anbangbang Billabong at Nourlangie. Nope, I\'m not kidding.', event);">Kakadu</a>,
+            we rolled into Darwin and setup the van under a giant banana tree on our sister-in-law Janice's driveway. Sadly, and much to our dismay, the bananas didn't quite ripen while we were there, but nonetheless we so enjoyed Janice's hospitality, that we spent two weeks in Darwin, getting a much needed break from life in the caravan – and after 26 years, Doug finally met Sandra's brother Keith. Darwin is a
+            <a href="#" onclick="return pop(this, 'parliament-house-darwin-2.jpg', 'Parliament House, Darwin', event);">nice town</a>
+            on a tropical sea that is obviously experiencing a boom with much natural gas related construction ongoing. There are beautiful beaches right within the city limits, which enabled us to add the Timor Sea to the list of oceans we've swum in since our arrival Down Under (4 and counting).
+        </p>
+
+        <p class="center"><img alt="Wangi Falls, in Litchfield National Park, near Darwin" src="images/wangi-falls.jpg" /></p>
+
+        <p>
+            After Darwin, a lap of the Tabletop Track in Litchfield National Park was followed by a week of rock climbing at Hayes Creek. Next stop on the Magical Mystery Tour was Alice Springs in the “Red Centre”, which is pretty much the geographic centre of the continent. We really liked Alice and loved the Red Centre. In late winter, when we were there, the weather is pretty dreamy: endless cloudless days with cool nights and warm days. Alice is a surprisingly clean, neat, orderly, and well maintained town. It is situated amongst the Macdonnell Ranges and actually quite a pretty place. If it were a few thousand kilometres closer to the coast, we might have just stayed. Instead, we spent the next six weeks exploring the
+            <a href="#" onclick="return pop(this, 'rocky-bar-gap-from-mt-sonder.jpg', 'West Macdonnel Range', 'Rocky Bar Gap from Mt Sonder.', event);">ranges</a>,
+            <a href="#" onclick="return pop(this, 'ormiston-gorge-2.jpg', 'Ormiston Gorge', event);">gorges</a>, and
+            <a href="#" onclick="return pop(this, 'uluru-ayers-rock.jpg', 'Uluru', 'Uluru, aka Ayers Rock', event);">monoliths</a>
+            of the Red Centre, including the stunning 223 km
+            <a href="#" onclick="return pop(this, 'heavitree-range-counts-point.jpg', 'Heavitree Range', 'Heavitree Range, in the West Macdonnel Range.', event);">Larapinta Trail</a>.
+        </p>
+
+        <p class="center"><img alt="Sandy on Razorback Ridge on the Larapinta Trail" src="images/sandy-razorback-ridge-3b.jpg" /></p>
+
+        <p class="center"><img alt="Sandy at Kings Canyon" src="images/sandy-kings-canyon-2.jpg" /></p>
+
+        <p>
+            By the beginning of September, things were starting to heat up in the Alice, and we had been in-country for two years without yet visiting Mt Arapiles, Australia's most famous rock climbing area. It was time to remedy that, so we steeled ourselves and over two weeks made the long drive south to Victoria.
+        </p>
+
+        <p class="center"><img alt="Lake Hart, a normally dry salt lake in South Australia" src="images/sandy-lake-hart-2.jpg" /></p>
+
+        <p>
+            Arapiles has been called “The Best Cliff in the World”, but our experiences with Australian rock climbing have been pretty checkered, to be diplomatic, so we were rather guarded in our expectations for the place. In the end, we spent nearly two months there and found it one of the best climbing areas we have ever visited – an absolute nirvana for aging, untalented traditional rock climbers. The place absolutely rocks.
+        </p>
+
+        <p class="center"><img alt="Sandy leading pitch 4 of 'Beau Geste'" src="images/sandy-beau-geste-p4.jpg" /></p>
+
+        <p class="center"><img alt="Doug leading pitch 2 of 'Panzer'" src="images/panzer_p2_doug.jpg" /></p>
+
+        <p>
+            In the middle of our Arapiles stay, we were ecstatic to receive our first Canadian visitors – our good friends Roland and Murielle from Nelson came to Australia for a couple months of road biking in Victoria and Tasmania. They took some time out of the saddle to join us for some bushwalking in the Grampians and a week long sea kayak trip on Gippsland Lakes in SE Victoria.
+        </p>
+
+        <p class="center"><img alt="Sandy, Murielle, and Rolando at Storm Point" src="images/sandy-murielle-roland-storm-point.jpg" /></p>
+
+        <p>
+            After we finally tired of Arapiles, we headed south once again, hiking in the Grampians
+        </p>
+
+        <p class="center"><img alt="Stapylton Cirque in the Grampians" src="images/sandy-stapylton-cirque.jpg" /></p>
+
+        <p>
+            and paddling and walking on the SW coast of Victoria.
+        </p>
+
+        <p class="center"><img alt="Sandy at Bridgewater Bay" src="images/sandy-bridgewater-bay.jpg" /></p>
+
+        <p>
+            If you've made it this far in this long missive, consider yourself up to date on Sandra and Doug's Excellent Adventure. We're well into our third year of being homeless, and don't seem to be inclined to do anything about that anytime soon. Where will we be next Christmas? We have no idea.
+        </p>
+
+        <p class="center"><img alt="Sandy at Discovery Bay" src="images/sandy-discovery-bay-gsww-day1.jpg" /></p>
+
+        <p>
+            As the sun sets on another circuit around our star
+        </p>
+
+        <p class="center"><img alt="Sunset at Point Wilson" src="images/sunset-point-wilson-2.jpg" /></p>
+
+        <p>
+            we wish our friends and family health, happiness and all good things in the year ahead.
+        </p>
+
+        <p class="center"><img alt="" src="images/selfie_end.jpg" /></p>
+
+        <p class="center">
+            Doug &amp; Sandy.
+        </p>
+    </div>
+
+    <!-- Popup pic -->
+    <div id="divPopup" style="display:none; background-color: black; padding: 10px;">
+        <img id="imgPopup" />
+        <!--        <div class="center"><img id="imgPopup" /></div>-->
+        <p id="caption" class="caption">Sunset Lamington National Park</p>
+        <div id="dialogclose"><div id="close" class="btn" onclick="$('#divPopup').dialog('close'); return false;">Close</div></div>
+    </div>
+</body>
+</html>
