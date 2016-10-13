@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The World According to Toquehead</title>
+
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <script type="text/javascript" src="scripts/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="index" class="index">
+            <h1> Toquehead's World</h1>
+            <div id="links">
+                <div class="group open">
+                    <div class="group-toggle"></div><div class="group-name">Favorites</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-37_metric_e.html">Nelson Weather</a></div>
+                        <div class="item"><a href="http://weather.gc.ca/forecast/public_bulletins_e.html?Bulletin=fpcn68.cwvr">High Elevation Forecast</a></div>
+                        <div class="item"><a href="http://www.theweathernetwork.com/weather/cities/can/pages/CABC0198.htm">Nelson Weather Network</a></div>
+                        <div class="item"><a href="http://www.theweathernetwork.com/fourteenday/cabc0198?ref=qlink_lt_14day">Nelson 14-day</a></div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Radar</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/radar/index_e.html?id=XSS">Silver Star Radar</a></div>
+                                <div class="item"><a href="http://www.theweathernetwork.com/weather/maps/?ref=topnav_weatherindex_maps">Weather Network Radar</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Road Conditions</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.drivebc.ca/">Drive BC</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.pyr.ec.gc.ca/icbctravelalert/dtables_e.html">BC Road Weather</a></div>
+                            </div>
+                        </div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-65_metric_e.html">Revelstoke Weather</a></div>
+                        <div class="item"><a href="http://www.whistlerblackcomb.com/weather/forecast/index.htm">Whistler Alpine Weather</a></div>
+                        <div class="item"><a href="http://www.cpc.ncep.noaa.gov/products/forecasts/">US Forecasts Index</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.redresort.com/today/report/">Red Mountain Snow</a></div>
+                        <div class="item"><a href="http://www.revelstokemountainresort.com/conditions/snow-report">Revelstoke Snow</a></div>
+                        <div class="item"><a href="http://www.whistlerblackcomb.com/weather/snowreport/index.htm">Whistler Snow</a></div>
+                        <div class="item"><a href="http://www.skiwhitewater.com/whitewater_snow_report.php">Whitewater Snow</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://selkirk.ca/weather/aviation-webcams/">Castlegar Web Cam</a></div>
+                        <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/html/www/5.html">Kootenay Pass Web Cam</a></div>
+                        <div class="item"><a href="http://www.redresort.com/mountain/cams/">Red Mountain Cams</a></div>
+                        <div class="item"><a href="http://www.skiwhitewater.com/whitewater_webcam.php">Whitewater Web Cam</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/weather/31091.html">Hall Creek wx</a></div>
+                        <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/weather/32221.html">Strawberry Pass wx</a></div>
+                        <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/weather/33122.html">Paulson wx</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Weather</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/forecast/canada/summary_e.html?BC">BC Overview</a></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-21_metric_e.html">Castlegar</a></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-38_metric_e.html">Nakusp</a></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-37_metric_e.html">Nelson</a></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-69_metric_e.html">Osoyoos</a></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-84_metric_e.html">Penticton</a></div>
+                        <div class="item"><a href="http://weatheroffice.ec.gc.ca/city/pages/bc-65_metric_e.html">Revelstoke</a></div>
+                        <div class="item"><a href="http://www.weatheroffice.gc.ca/radar/index_e.html?id=XSS">Silver Star Radar</a></div>
+                        <div class="item"><a href="http://avalanche.ca/CAC_Weather_Images">CAA Weather Data</a></div>
+                        <div class="item"><a href="http://www.wrh.noaa.gov/total_forecast/index.php?zone=waz026&county=wac037&wfo=pdt&dgtl=1&lat=46.94556&lon=-119.98611">Vantage Washington</a></div>
+                        <div class="item"><a href="http://www.wrh.noaa.gov/">US Forecasts</a></div>
+                        <div class="item"><a href="http://cimss.ssec.wisc.edu/tropic/real-time/tpw2/epac/main.html">Precip Water</a></div>
+                        <div class="item"><a href="http://sat.wrh.noaa.gov/satellite/loopsat.php?wfo=pdt&area=nw&type=vis&size=4">Satellite, Visible</a></div>
+                        <div class="item"><a href="http://sat.wrh.noaa.gov/satellite/loopsat.php?wfo=pdt&area=nw&type=ir&size=4">Satellite, Infared</a></div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Nelson Other</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.theweathernetwork.com/weather/cities/can/pages/CABC0198.htm">Weather Network</a></div>
+                                <div class="item"><a href="http://www.weather.com/outlook/travel/local/CAXX0315?whatprefs=&amp;logssearchwhere=nelson,%20canada">weather.com</a></div>
+                                <div class="item"><a href="http://www.cpc.ncep.noaa.gov/products/predictions/610day/fxus06.html">US Outlook Discussion</a></div>
+                                <div class="item"><a href="http://www.cpc.ncep.noaa.gov/products/predictions/610day/">US 6-10 Day</a></div>
+                                <div class="item"><a href="http://www.cpc.ncep.noaa.gov/products/predictions/814day/">US 8-14 Day</a></div>
+                                <div class="item"><a href="http://www.cpc.ncep.noaa.gov/products/forecasts/">US Forecasts Index</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Alpine Forecasts</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/forecast/textforecast_e.html?Bulletin=fpcn68.cwvr">High Elevation Forecast</a></div>
+                                <div class="item"><a href="http://www.bigwhite.com/mountain_showWeatherForecast.html">Big White Weather</a></div>
+                                <div class="item"><a href="http://www.skifernie.com/conditions/alpineweather.aspx">Fernie</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.com/scripts/citygen.pl?city=cp-5&client=seymour_e&cmap=cp">Mount Seymour</a></div>
+                                <div class="item"><a href="http://www.snow-forecast.com/resorts/Mount-Baker.0to3top.shtml">Mount Baker</a></div>
+                                <div class="item"><a href="http://www.redresort.com/mountain/forecast/">Red Mountain</a></div>
+                                <div class="item"><a href="http://www.skisilverstar.com/mountain_showWeatherForecast.html">Silver Star Weather</a></div>
+                                <div class="item"><a href="http://www.sunpeaksresort.com/weather/forecast.aspx">Sun Peaks Weather</a></div>
+                                <div class="item"><a href="http://www.whistlerblackcomb.com/weather/forecast/index.htm">Whistler Alpine</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Automated Stations</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/weather/31091.html">Hall Creek</a></div>
+                                <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/html/www/5.html">Kootenay Pass</a></div>
+                                <div class="item"><a href="http://www.th.gov.bc.ca/bchighwaycam/weatherData.aspx?stationId=33122">Paulson Summit</a></div>
+                                <div class="item"><a href="http://www.env.gov.bc.ca/rfc/river_forecast/Real_Time/Raw_Data/2D14P.htm">Redfish Creek</a></div>
+                                <div class="item"><a href="http://a100.gov.bc.ca/pub/aspr/aspr_main_report.do?disclaimer=Accept&fromYear=2008&fromMonth=December&fromDay=1&hourlyOrDaily=Daily&toYear=2009&toMonth=May&toDay=31&action=Table&stationParameters=2D14P%3A%3AMAXT&stationParameters=2D14P%3A%3AMINT&stationParameters=2D14P%3A%3ASDPS&stationParameters=2D14P%3A%3ASWES">Redfish Creek2</a></div>
+                                <div class="item"><a href="http://www.th.gov.bc.ca/bchighwaycam/weatherData.aspx?stationId=32221">Strawberry Pass</a></div>
+                                <div class="item"><a href="http://www.th.gov.bc.ca/bchighwaycam/weatherData.aspx?stationId=34126">Fish Lake/Retallack</a></div>
+                                <div class="item"><a href="http://www.bchydro.com/info/res_hydromet/data/fdl.txt">Mt Fidelity</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Freezing Levels</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.flightplanning.navcanada.ca/Latest/gfa/anglais/Latest-gfacn31_turbc_000-e.html">Current</a></div>
+                                <div class="item"><a href="http://www.flightplanning.navcanada.ca/Latest/gfa/anglais/Latest-gfacn31_turbc_006-e.html">+6 hours</a></div>
+                                <div class="item"><a href="http://www.flightplanning.navcanada.ca/Latest/gfa/anglais/Latest-gfacn31_turbc_012-e.html">+12 hours</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Eastern BC</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-77_metric_e.html">Cranbrook</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-26_metric_e.html">Creston</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-34_metric_e.html">Golden</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-72_metric_e.html">Invermere</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">West Coast</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-24_metric_e.html">Chilliwack</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-36_metric_e.html">Hope</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-89_metric_e.html">Port Hardy</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-50_metric_e.html">Squamish</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-17_metric_e.html">Tofino</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-74_metric_e.html">Vancouver</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-86_metric_e.html">Whistler</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Alberta</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/ab-49_metric_e.html">Banff</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/ab-52_metric_e.html">Calgary</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/ab-17_metric_e.html">Crowsnest</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/ab-70_metric_e.html">Jasper</a></div>
+                                <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/ab-66_metric_e.html">Waterton</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Web Cams</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://web.alberta.com/skycams/sulphurmtn.html">Banff</a></div>
+                        <div class="item"><a href="http://www.bigwhite.com/images/bwwebcam.jpg">Big White 1</a></div>
+                        <div class="item"><a href="http://www.bigwhite.com/images/glwebcam.jpg">Big White 2</a></div>
+                        <div class="item"><a href="http://www.cmhinc.com/images/webcam/BUwebcam.jpg">Bugaboos</a></div>
+                        <div class="item"><a href="http://selkirk.ca/weather/aviation-webcams/">Castlegar</a></div>
+                        <div class="item"><a href="http://www.ferniewebcam.com/Library.htm">Fernie</a></div>
+                        <div class="item"><a href="http://images.drivebc.ca/bchighwaycam/pub/html/www/5.html">Kootenay Pass</a></div>
+                        <div class="item"><a href="http://www.skilouise.com/mountain_cam/">Lake Lousy</a></div>
+                        <div class="item"><a href="http://www.skimarmot.com/skicam.html">Marmot Basin</a></div>
+                        <div class="item"><a href="http://www.rsn.com/cams/panorama/">Panorama</a></div>
+                        <div class="item"><a href="http://www.redresort.com/today/">Red Mountain</a></div>
+                        <div class="item"><a href="http://www.skisilverstar.com/weather/webcam.jpg">Silver Star</a></div>
+                        <div class="item"><a href="http://www.redresort.com/mountain/cams/">Red Mountain</a></div>
+                        <div class="item"><a href="http://www.th.gov.bc.ca/bchighwaycam/index.aspx?hideFramework=False&cam=11">Revelstoke</a></div>
+                        <div class="item"><a href="http://www.th.gov.bc.ca/bchighwaycam/index.aspx?hideFramework=False&cam=101">Rogers Pass</a></div>
+                        <div class="item"><a href="http://www.skibanff.com/skicam/">Sunshine Village</a></div>
+                        <div class="item"><a href="http://www.whistlerwebcams.com/sproatt/">Whistler Alpine</a></div>
+                        <div class="item"><a href="http://www.whistlerblackcomb.com/weather/cams/whistler/index.htm">Whistler/Blackcomb</a></div>
+                        <div class="item"><a href="http://www.skiwhitewater.com/whitewater_webcam.php">Whitewater</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Ski Reports</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.baldface.net/snowreport">Baldface</a></div>
+                        <div class="item"><a href="http://www.skifernie.com/snowreport/">Fernie Official</a></div>
+                        <div class="item"><a href="http://far.redtree.com/cgmrep.html">Fernie Unofficial</a></div>
+                        <div class="item"><a href="http://gah.ca/w-snow_update.html">Golden Alpine</a></div>
+                        <div class="item"><a href="http://www.kickinghorseresort.com/conditions/">Kicking Horse</a></div>
+                        <div class="item"><a href="http://community.netidea.com/powder/snowrpt.htm">Powder Creek</a></div>
+                        <div class="item"><a href="http://www.redresort.com/today/report/">Red Mountain</a></div>
+                        <div class="item"><a href="http://www.unred.com/">The UnRed</a></div>
+                        <div class="item"><a href="http://www.revelstokemountainresort.com/revelstokemtn/conditions.aspx">Revelstoke Snow</a></div>
+                        <div class="item"><a href="http://www.whistlerblackcomb.com/weather/snowreport/index.htm">Whistler</a></div>
+                        <div class="item"><a href="http://www.skiwhitewater.com/whitewater_snow_report.php">Whitewater</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.skilouise.com/conditions/snow-report.aspx">Lake Lousy</a></div>
+                        <div class="item"><a href="http://www.skimarmot.com/u/snowreport.phtml">Marmot Basin</a></div>
+                        <div class="item"><a href="http://www.skibanff.com/conditions/snow_report.php">Sunshine Village</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.alta.com/pages/report.php">Alta</a></div>
+                        <div class="item"><a href="http://www.brundage.com/the-mountain/snow-report/">Brundage</a></div>
+                        <div class="item"><a href="http://www.mammothmountain.com">Mammoth Lakes</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Avalanche Reports</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.avalanche.ca/">CAA Home</a></div>
+                        <div class="item"><a href="http://www.avalanche.ca/default.aspx?DN=5,4,558,3,Documents">CAA Bulletins</a></div>
+                        <div class="item"><a href="http://www.pc.gc.ca/apps/PSB/index_e.asp?oqAVA_PARK_ID=3">Rogers Pass</a></div>
+                        <div class="item"><a href="http://www.csac.org/">CSAC Avalanche Page</a></div>
+                        <div class="item"><a href="http://www.avalanche.org/%7Euac/">Utah Avalanche Center</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Road Conditions</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.drivebc.ca/">Drive BC</a></div>
+                        <div class="item"><a href="http://www.weatheroffice.pyr.ec.gc.ca/icbctravelalert/dtables_e.html">BC Road Weather</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Trips and Stuff</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/findlay/findlay.html">Mount Findlay</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/burnham/burnham.html">Mount Burnham</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/monica/monica.html">Monica Meadows</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/goldrange/goldrange.html">Gold Range</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/sharkbay/sharkbay.html">Shark Bay</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/valhalla/valhalla.html">Valhalla - Nott to Dag</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/toquehead/welshlakes/welshlakes.html">Welsh Lakes</a></div>
+                        <div class="item"><a href="http://members.shaw.ca/dog_house/">Sandra's Trips</a></div>
+                        <div class="item"><a href="http://www.telusplanet.net/public/stjohnb/">All About Bob</a></div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Old Goats Mailing List</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://groups.yahoo.com/group/oldgoat/">View the archive</a></div>
+                                <div class="item"><a href="http://groups.yahoo.com/group/oldgoat/join/">Subscribe to the list</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Miscellaneous</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.kootenaymountaineering.bc.ca/">KMC</a></div>
+                        <div class="item"><a href="http://stats.kootenayinternet.com/kootenaymountaineering.bc.ca/">KMC Stats</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <a id="oz" href="index.html">Toquehead Oz</a>
+        </div>
+
+        <div id="target">
+            <iframe id="target-iframe"></iframe>
+        </div>
+    </div>
+</body>
+</html>

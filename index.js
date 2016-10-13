@@ -1,7 +1,3 @@
-/// <reference path="scripts/jquery-2.2.0.min.js" />
-/// <reference path="oz-links.js" />
-"use strict";
-
 $(document).ready(function () {
     var query = document.location.search.toLowerCase();
     if (query[0] === '?')
@@ -20,83 +16,41 @@ $(document).ready(function () {
     if (bodyClass)
         document.body.className = bodyClass;
 
-    var index = -1;
+    var sizeIframe = function () {
+        $('#target').css('width', 'calc(100% - ' + $('#index').outerWidth() + 'px)');
+    };
 
-    function toggle(event) {
-        var anchor = this;
-        if (!anchor)
-            return true;
+    // On small screen, open all links in new window
+    if (bSmallScreen) {
+        $('#target').remove();
+        $('#index').width('100%');
+        $('div.item a').each(function () { $(this).attr('target', '_blank'); });
+    }
+    else {
+        // Load links into iFrame
+        $('#links div.item a').on('click', function (e) {
+            if (this.target)
+                return true;
 
-        var $tr = $(anchor).closest('tr');
-        var $trKids = $tr.next();
-
-        var $img = $tr.find('img.toggle');
-        if ($trKids.is(':visible')) {
-            $img.prop('src', 'images/down.gif');
-            $trKids.hide();
-        }
-        else {
-            $img.prop('src', 'images/right.gif');
-            $trKids.show();
-        }
+            $('#target-iframe').prop('src', this.href);
+            return false;
+        });
     }
 
-    function link(event) {
-        var anchor = this;
-        if (bSmallScreen || !anchor || !anchor.href || anchor.target || event.ctrlKey)
-            return true;
+    // Wire up index expand/collapse
+    $('#links').on('click', 'div.group-toggle, div.group-name', function (e) {
+        $(this).closest('div.group').toggleClass('open');
 
-        $('#target-iframe').prop('src', anchor.href);
-
-        return false;
-    }
-
-    function appendLink(link) {
-        index++;
-
-        if (link.kids) {
-            var img = link.open ? 'right' : 'down';
-            html += '<tr data-index="' + index + '"><td><a href="#" class="pivot"><img class="toggle" id="img' + index + '" src="images/' + img + '.gif"></a></td><td><a href="#" class="pivot">' + link.name + '</a></td></tr>';
-
-            html += '<tr';
-            if (!link.open)
-                html += ' style="display:none;"';
-            html += '><td></td><td class="sublist"><table class="sublist">';
-
-            link.kids.forEach(function (kid) {
-                appendLink(kid);
-            });
-            html += '</table></td></tr>';
-        }
-        else {
-            html += '<tr data-index="' + index + '"';
-
-            if (!link.name) {
-                html += ' class="spacer"><td></td><td>&nbsp;</td>';
-            }
-            else {
-                html += `><td></td><td><a class="link" id="link${index}" href="${link.url}"${link.pop ? ' target="_blank"' : ''}>${link.name}</a></td>`;
-            }
-            html += '</tr>';
-        }
-    }
-
-    var bCanada = params.indexOf('list=cdn') >= 0;
-    var list = bCanada ? cdnLinks : ozLinks;
-
-    // Remove the link pointing at this page.
-    $('#' + (bCanada ? 'cdn' : 'oz')).remove();
-
-    var html = '';
-    list.forEach(function (link) {
-        appendLink(link);
+        // Resize iframe as index width may have changed.
+        if (!bSmallScreen)
+            sizeIframe();
     });
 
-    $('#index')
-        .append(html)
-        .on('click', 'a.pivot', toggle)
-        .on('click', 'a.link', link);
+    // iFrame to fill window.
+    sizeIframe();
 
-    // Default to first link
-    $('a.link:visible:first').trigger('click');
+    // Open first item
+    $('div.item a:visible:first').trigger('click');
+
+    $(window).on('resize', sizeIframe);
 });

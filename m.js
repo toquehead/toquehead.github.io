@@ -2,8 +2,5 @@
 /// <reference path="oz-links.js" />
 "use strict";
 
-alert('javascript');
-
 $(document).ready(function () {
-    alert('jQuery');
 });

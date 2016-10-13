@@ -1,3 +1,33 @@
+function div(links, level) {
+    level = level || 0;
+    var indent = '';
+    for (var i = 0; i < level; ++i)
+        indent += '    ';
+
+    var strDiv = '';
+    links.forEach(link => {
+        if (link.name) {
+            if (link.kids) {
+                strDiv += indent + '<div class="group">\r\n';
+                let indent2 = indent + "    ";
+                strDiv += `${indent2}<div class="group-toggle"></div><div class="group-name">${link.name}</div>\r\n`
+                    + indent2 + '<div class="group-items">\r\n'
+                    + div(link.kids, level + 2)
+                    + indent2 + '</div>\r\n'
+                    + indent + '</div>\r\n';
+            }
+            else {
+                strDiv += `${indent}<div class="item"><a href="${link.url}">${link.name}</a></div>\r\n`;
+            }
+        }
+        else {
+            strDiv += indent + '<div class="spacer"></div>\r\n';
+        }
+    });
+    
+    return strDiv;
+}
+
 // Data for Toquehead's list
 var ozLinks = [
 	{ name: 'Favorites', open: true, kids: 

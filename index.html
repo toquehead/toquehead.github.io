@@ -1,36 +1,172 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <title>The World According to Toquehead</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
-        <link rel="stylesheet" type="text/css" href="toque.css" />
+    <title>The World According to Toquehead</title>
 
-        <script type="text/javascript" src="scripts/jquery-2.2.0.min.js"></script>
-        <script type="text/javascript" src="oz-links.js"></script>
-        <script type="text/javascript" src="cdn-links.js"></script>
-        <script type="text/javascript" src="index.js"></script>
-    </head > 
-    <body> 
-        <table id="frame">
-            <tr>
-                <td class="index">
-                    <div class="index">
-                        <h1> Toquehead's World</h1>
-                        <table id="index" class="index"></table>
-                        <br /> >
-                        <a id="cdn" href="index.html?list=cdn"> Toquehead Canada</a>
-                        <a id="oz" href="index.html"> Toquehead Oz</a>
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+
+    <script type="text/javascript" src="scripts/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="index" class="index">
+            <h1> Toquehead's World</h1>
+            <div id="links">
+                <div class="group open">
+                    <div class="group-toggle"></div><div class="group-name">Favorites</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/batemansbay.shtml">Moruya</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/eden.shtml">Eden</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/batemanscoast.shtml">Moruya Marine</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/edencoast.shtml">Eden Marine</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/australia/tides/#!/nsw-moruya">Moruya Tides</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/australia/tides/#!/nsw-eden">Eden Tides</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/australia/meteye/" target="_blank">MetEye</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/products/IDR403.loop.shtml" target="_blank">Canberra radar</a></div>
+                        <div class="item"><a href="http://wind.willyweather.com.au/nsw/south-coast/moruya-heads.html">Willy Moruya Heads</a></div>
+                        <div class="item"><a href="http://wind.willyweather.com.au/nsw/south-coast/montague-island.html">Willy Montague Island</a></div>
+                        <div class="item"><a href="http://wind.willyweather.com.au/nsw/south-coast/green-cape.html">Willy Green Cape</a></div>
+                        <div class="item"><a href="http://www.seabreeze.com.au/graphs/nsw5.asp">Seabreeze South Coast</a></div>
+                        <div class="item"><a href="http://new.mhl.nsw.gov.au/data/realtime/wave/Buoy-batbow">Batemans Bay Wave Data</a></div>
+                        <div class="item"><a href="http://new.mhl.nsw.gov.au/data/realtime/wave/Buoy-edenow">Eden Wave Data</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.coastalwatch.com/surf-cams-surf-reports/nsw/moruya">Moruya Surf Cam</a></div>
+                        <div class="item"><a href="http://www.coastalwatch.com/surf-cams-surf-reports/nsw/narooma">Narooma Surf Cam</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/nowra.shtml">Nowra</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/katoomba.shtml">Katoomba</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/bowral.shtml">Bowral</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/australia/charts/4day_col.shtml">Australia 4-day Charts</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/australia/tides/">Tide Tables</a></div>
+                        <div class="item"><a href="http://www.weatherzone.com.au/">Oz Weather</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/marine/?ref=ftr">Marine Weather</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.weatheroffice.gc.ca/city/pages/bc-37_metric_e.html">Nelson Weather</a></div>
+                        <div class="item"><a href="http://weather.gc.ca/forecast/public_bulletins_e.html?Bulletin=fpcn68.cwvr">Koots High Elevation</a></div>
+                        <div class="item"><a href="http://www.skiwhitewater.com/whitewater_snow_report.php">Whitewater Snow</a></div>
+                        <div class="item"><a href="http://www.whistlerblackcomb.com/the-mountain/snow-and-weather/index.aspx">Whistler Snow</a></div>
                     </div>
-                </td>
-                <td class="target">
-                    <div id="target-div">
-                        <iframe id="target-iframe" name="TOQUE" frameborder="0" style="height: 100%;"></iframe>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">NSW</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/sydney.shtml">Sydney Weather</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/nsw/forecasts/sydneycoast.shtml">Sydney Marine</a></div>
+                        <div class="item"><a href="http://tides.willyweather.com.au/nsw/sydney/cronulla-beach.html">Cronulla Tides</a></div>
+                        <div class="item"><a href="http://www.coastalwatch.com/camera/cameras_large.aspx?cam=4000&state=NSW&camName=Cronulla%20-%20Wanda">Cronulla Surf</a></div>
+                        <div class="item"><a href="http://www.swellnet.com.au/reports/cronulla/daily">Cronulla Swellnet</a></div>
+                        <div class="item"><a href="http://swell.willyweather.com.au/nsw/sydney/cronulla-beach.html">Cronulla Swell</a></div>
                     </div>
-                </td>
-            </tr>
-        </table>
-    </body>
-</html >
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Tassie</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/hobart.shtml">Hobart</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/queenstown.shtml">Queenstown</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/burnie.shtml">Burnie</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/devonport.shtml">Devonport</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/bridport.shtml">Bridport</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/sthelens.shtml">St Helens</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/coles-bay.shtml">Coles Bay</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/maria-island.shtml">Maria Island</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/adventure-bay.shtml">Adventure Bay</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/dover.shtml">Dover</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/melaleuca.shtml">Melaleuca</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/map7day.shtml">Tasmanian Towns</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/map.shtml">Tasmanian Districts</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/cradlevalley.shtml">Cradle Valley</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/lakestclair.shtml">Lake St Clair</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/mount-field.shtml">Mt Field</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/mtwellington.shtml">Mt Wellington</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/ben-lomond.shtml">Ben Lomond</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/centralnorthcoast.shtml">Marine North Coast</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/eastflindersisland.shtml">Marine NE Coast</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/uppereastcoast.shtml">Marine Upper E Coast</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/lowereastcoast.shtml">Marine Maria</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/southeastcoast.shtml">Marine Bruny</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/channel.shtml">Marine Bruny West</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/tas/forecasts/bays.shtml">Marine Norfolk Bay</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://wind.willyweather.com.au/tas/southern/cape-bruny.html">Willy - Cape Bruny</a></div>
+                        <div class="item"><a href="http://wind.willyweather.com.au/tas/southern/coles-bay.html">Willy - Coles Bay</a></div>
+                        <div class="item"><a href="http://wind.willyweather.com.au/tas/southern/maria-island.html">Willy - Maria Island</a></div>
+                        <div class="item"><a href="http://www.seabreeze.com.au/graphs/tasmania_east_coast.asp">Seabreeze - Friendly Beaches</a></div>
+                        <div class="spacer"></div>
+                        <div class="item"><a href="http://www.bom.gov.au/jsp/watl/wind/index.jsp">BOM Wind Charts</a></div>
+                        <div class="item"><a href="http://swell.willyweather.com.au/tas/southern/cape-tourville.html">Cape Tourville Swell</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Victoria</div>
+                    <div class="group-items">
+                        <div class="item"><a href="http://www.bom.gov.au/vic/forecasts/horsham.shtml">Arapiles</a></div>
+                        <div class="item"><a href="http://www.eldersweather.com.au/vic/wimmera/arapiles">Arapiles - Elders</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/vic/forecasts/melbourne.shtml">Melbourne</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/vic/forecasts/portland.shtml">Portland</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/vic/forecasts/westcoast.shtml">Victoria West Marine</a></div>
+                        <div class="item"><a href="http://www.bom.gov.au/vic/forecasts/centralcoast.shtml">Victoria Central Marine</a></div>
+                    </div>
+                </div>
+                <div class="group">
+                    <div class="group-toggle"></div><div class="group-name">Queensland</div>
+                    <div class="group-items">
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Cairns</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/cairns.shtml">Cairns Weather</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/cairns-coast.shtml">Cairns Marine Weather</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/products/IDQ60801/IDQ60801.94287.shtml">Cairns Obs</a></div>
+                                <div class="item"><a href="http://wind.willyweather.com.au/qld/far-north/cairns.html">Willy Wind</a></div>
+                                <div class="item"><a href="http://www.eldersweather.com.au/qld/nth-cst-and-tableland/cairns">Cairns Elders Weather</a></div>
+                                <div class="item"><a href="http://www.ehp.qld.gov.au/coastal/monitoring/waves/site_param.php?siteid=9&paramid=1">Cairns Wave Data</a></div>
+                                <div class="item"><a href="http://swell.willyweather.com.au/qld/far-north/green-island.html">Green Island Wave</a></div>
+                                <div class="item"><a href="http://www.northqueenslandlifesaving.com/beachupdates.htm">North Qld Beaches</a></div>
+                                <div class="spacer"></div>
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/state.shtml">Queensland Synopsis</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/map.shtml">Queensland Forecasts</a></div>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="group-toggle"></div><div class="group-name">Townsville</div>
+                            <div class="group-items">
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/townsville.shtml">Townsville Weather</a></div>
+                                <div class="item"><a href="http://www.eldersweather.com.au/qld/lower-burdekin/townsville">Townsville Elders Weather</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/products/IDQ60801/IDQ60801.94294.shtml">Townsville Obs</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/bowen.shtml">Bowen Weather</a></div>
+                                <div class="item"><a href="http://www.eldersweather.com.au/qld/central-coast/hamilton-island">Hamilton Island Elders Weather</a></div>
+                                <div class="spacer"></div>
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/townsville-coast.shtml">Townsville Marine Weather</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/qld/forecasts/mackay-coast.shtml">Mackay Marine Weather</a></div>
+                                <div class="item"><a href="http://wind.willyweather.com.au/qld/northern/townsville.html">Townsville Willy Wind</a></div>
+                                <div class="item"><a href="http://wind.willyweather.com.au/qld/mackay/hamilton-island.html">Hamilton Island Willy Wind</a></div>
+                                <div class="item"><a href="http://www.seabreeze.com.au/graphs/qld2.asp#F3TOWN">Seabreeze wind/wave</a></div>
+                                <div class="item"><a href="http://www.ehp.qld.gov.au/coastal/monitoring/waves/site_param.php?siteid=10&paramid=1">Townsville Wave Obs</a></div>
+                                <div class="item"><a href="http://www.bom.gov.au/products/IDQ60801/IDQ60801.94368.shtml">Hamilton Island Obs</a></div>
+                                <div class="spacer"></div>
+                                <div class="item"><a href="http://www.townsville.qld.gov.au/facilities/swimming/Pages/beaches.aspx">Townsville Beaches</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <a id="ca" href="index-ca.html">Toquehead Canada</a>
+        </div>
+
+        <div id="target">
+            <iframe id="target-iframe" name="TOQUE"></iframe>
+        </div>
+    </div>
+</body>
+</html>
