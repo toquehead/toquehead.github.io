@@ -10,35 +10,43 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('div#letter img').each(function (i, img) {
+                img.title = "Click to expand.";
                 var alt = img.getAttribute('alt');
                 if (alt)
                     $(img).after('<p class="caption">' + alt + '</p>');
             });
             
-            $('div.image').click(function (event) {
+            $('div.image img').click(function (event) {
                 var $img = $('#image-zoom');
-                $img.prop('src', $(this).find('img').prop('src'));
+                $img.prop('src', this.src);
+
                 var $div = $('#div-zoom');
                 var top = event.clientY - $div.height() / 2;
                 if (top + $div.height() > $(window).height())
                     top = $(window).height() - $div.height();
-                var top = Math.max(document.body.scrollTop, top + document.body.scrollTop);
+                var scrollTop = $(document).scrollTop();
+                var top = Math.max(scrollTop, top + scrollTop);
 
+                var left = Math.max(0, ($(window).width() - $div.width()) / 2)
                 $('#image-zoom').css('max-height', $(window).height() - 10);
-                $('#div-zoom').css('top', top).show();
+                $('#div-zoom').css({ top: top, left: left }).show();
 
                 return false;
             });
 
-            $('#div-zoom, #icon-close').click(function () {
+            // IE and Edge scroll to bottom after closing if done the JQuery way. Oh how I have M$ ...
+            document.getElementById('icon-close').addEventListener('click', function (event) {
                 $('#div-zoom').hide();
+                return false;
+            });
 
+            $('#div-zoom').click(function (event) {
+                $('#div-zoom').hide();
                 return false;
             });
 
             $(document).keydown(function (event) {
                 $('#div-zoom').hide();
-
                 return false;
             });
         });
@@ -56,7 +64,7 @@
                 <div class="image"><img alt="Our home for the last year." src="images/moruya-house.jpg" /></div>
             </div>
 
-            <p>For the first year in four, we had no extensive Australian travels. Late last year, as always, we had extensive and detailed plans 
+            <p>For the first year in four, we had no significant Australian travels. Late last year, as always, we had extensive and detailed plans 
             for the coming year, and also as always, those plans were abandoned shortly thereafter. To date, our favourite all-round Aussie 
             location is the NSW south coast, around 150-200 km south of Sydney &ndash; it ticks all the boxes: beautiful warm water coastline, temperate 
             climate, away from the city, with easy access to sea kayaking, bush walking, and rock climbing. So when a year-long house-sit came 
@@ -68,8 +76,8 @@
                 <div class="image"><img alt="Moruya Heads." src="images/moruya-heads.jpg" /></div>
             </div>
 
-            <p>If last year’s <a href="/xmas2015/xmas2015.html">Xmas letter</a> was brought to you by the letter T, this year’s letter comes care of the letter P 
-            for paddling. The sea kayaking ‘round these parts is fantastic, and early on in our stay here, we were lucky enough to get hooked up 
+            <p>If last year's <a href="/xmas2015/xmas2015.html">Xmas letter</a> was brought to you by the letter T, this year's letter comes care of the letter P 
+            for paddling. The sea kayaking 'round these parts is fantastic, and early on in our stay here, we were lucky enough to get hooked up 
             with a great group of local paddlers, who let us tag along on their trips despite our lack of skill, experience, strength, or any 
             other redeeming characteristics.</p>
 
@@ -90,7 +98,7 @@
             <p>
                 We have had many, many wonderful days on the water with our new tribe, exploring the rocky headlands, caves, and islands of this
                 section of coast. We have often paddled with seals, rays, sharks, humpback whales, loads of birds, and landed on many beautiful
-                secluded beaches – sometimes even managing to stay upright landing in the surf. We have now paddled a 135km section of the coast
+                secluded beaches &ndash; sometimes even managing to stay upright landing in the surf. We have now paddled a 135km section of the coast
                 (north of Ulladulla to south of Narooma).
             </p>
 
@@ -108,11 +116,11 @@
             </div>
 
             <p>
-                Probably the thing we miss most about being homeless and always travelling is a social group – it is always just the two of us, and
-                as amazing as we are, we miss a sense of community. The local area reminds us of Nelson – we meet loads of like-minded folk who are
+                Probably the thing we miss most about being homeless and always travelling is a social group &ndash; it is always just the two of us, and
+                as amazing as we are, we miss a sense of community. The local area reminds us of Nelson &ndash; we meet loads of like-minded folk who are
                 tree-hugging left-wing pinko commie bastards who have opted-out of the consumer culture and are still out there pushing hard doing the
-                things they love well into their 60s and 70s. We couldn’t keep up to the genetic mutant senior citizens on skis in Nelson, and we
-                can’t keep up to their paddling cousins here on the south coast.
+                things they love well into their 60s and 70s. We couldn't keep up to the genetic mutant senior citizens on skis in Nelson, and we
+                can't keep up to their paddling cousins here on the south coast.
             </p>
 
             <div class="image-row">
@@ -121,7 +129,7 @@
             </div>
 
             <p>
-                Our house-sit is up on February 21, and then we’ll be hitting the road again, with plans to make it to the far north of Western
+                Our house-sit is up on February 21, and then we'll be hitting the road again, with plans to make it to the far north of Western
                 Australia by mid-winter. But who knows, we could end up anywhere.
             </p>
 

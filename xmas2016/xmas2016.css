@@ -16,12 +16,6 @@ h1
     color: #cc0000;
 }
 
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .caption
 {
 	font-size: smaller;
@@ -43,20 +37,20 @@ h1
     padding-left: 5em;
 }
 
-img
+div.image {
+    display: inline-block;
+}
+
+div.image img
 {
     border: 0px;
+    cursor: pointer;
     display: block;
     width: 100%;
     max-width: 450px;
     height: auto;
     margin-left: auto;
     margin-right: auto;
-}
-
-div.image {
-    cursor: pointer;
-    display: inline-block;
 }
 
 div.image-row div.image:first-child{
@@ -69,34 +63,12 @@ div.image-row div.image:first-child{
     text-align: center;
 }
 
-div.floating-button-container:hover div.floating-button {
-    visibility: visible;
-    /*transition-delay: 500ms;*/
-    background-color: #eee;
-    padding: 0.3em;
-    border: 1px solid #bbb;
-    border-radius: 0.4em;
-    box-shadow: .25em .25em .25em 0.1em rgba(187,187,187,0.5);
-    background-clip:         padding-box;
-}
-
-div.floating-button div.icon {
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 1.2em;
-    width: 1.2em;
-    padding: 0;
-    cursor: pointer;
-}
-
 #div-zoom {
     display: none;
     position: absolute;
     z-index: 101;
     max-width: 100%;
     max-height: 100%;
-    left: 0;
-    transform: translateX(50%);
 }
 
 #div-zoom img {
