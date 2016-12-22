@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasons Greetings from The Land Down Under</title>
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link href="xmas2016.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../scripts/jquery-3.1.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div#letter img').each(function (i, img) {
+                var alt = img.getAttribute('alt');
+                if (alt)
+                    $(img).after('<p class="caption">' + alt + '</p>');
+            });
+            
+            $('div.image').click(function (event) {
+                var $img = $('#image-zoom');
+                $img.prop('src', $(this).find('img').prop('src'));
+                var $div = $('#div-zoom');
+                var top = event.clientY - $div.height() / 2;
+                if (top + $div.height() > $(window).height())
+                    top = $(window).height() - $div.height();
+                var top = Math.max(document.body.scrollTop, top + document.body.scrollTop);
+
+                $('#div-zoom').css('top', top).show();
+            });
+
+            $('#div-zoom').click(function () {
+                $(this).hide();
+            });
+
+            $(document).keydown(function (event) {
+                $('#div-zoom').hide();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="letter-container">
+        <div id="letter">
+            <h1>Wishing You a Very Merry Non-Denominational Christmas</h1>
+
+            <p>And with the completion of another lap around our star, it is time to reflect upon the past year and reconnect with family and 
+            friends.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Our home for the last year." src="images/moruya-house.jpg" /></div>
+            </div>
+
+            <p>For the first year in four, we had no extensive Australian travels. Late last year, as always, we had extensive and detailed plans 
+            for the coming year, and also as always, those plans were abandoned shortly thereafter. To date, our favourite all-round Aussie 
+            location is the NSW south coast, around 150-200 km south of Sydney – it ticks all the boxes: beautiful warm water coastline, temperate 
+            climate, away from the city, with easy access to sea kayaking, bush walking, and rock climbing. So when a year-long house-sit came 
+            available in this area, it was too tempting to pass up. In the middle of February we moved into a lovely rural home just south of the 
+            small town of Moruya on the NSW south coast.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Glasshouse Rocks." src="images/glasshouse-rocks-cemetary-beach.jpg" /></div>
+                <div class="image"><img alt="Moruya Heads." src="images/moruya-heads.jpg" /></div>
+            </div>
+
+            <p>If last year’s <a href="/xmas2015/xmas2015.html">Xmas letter</a> was brought to you by the letter T, this year’s letter comes care of the letter P 
+            for paddling. The sea kayaking ‘round these parts is fantastic, and early on in our stay here, we were lucky enough to get hooked up 
+            with a great group of local paddlers, who let us tag along on their trips despite our lack of skill, experience, strength, or any 
+            other redeeming characteristics.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Launching with the tribe from Wimbie Beach." src="images/wimbi-beach-tollgate-islands.jpg" /></div>
+                <div class="image"><img alt="Paddling off Tuross Bar, Montague Island behind. Credit: Ian." src="images/peter-sandy-doug-john-tuross-by-ian2.jpg" /></div>
+            </div>
+
+            <p>Under the tutelage of some very experienced paddlers, we have been testing our limits on the ocean, and steadily increasing our
+                skills and confidence. We both love a challenge, and sea kayaking is proving fertile ground for finding challenges and opportunities
+                to work on our fear management.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Mark and Sandy at Mystery Bay arch." src="images/mark-sandy-mystery-bay-arch.jpg" /></div>
+                <div class="image"><img alt="Sandy at Black Rocks." src="images/sandy-black-rocks.jpg" /></div>
+            </div>
+
+            <p>
+                We have had many, many wonderful days on the water with our new tribe, exploring the rocky headlands, caves, and islands of this
+                section of coast. We have often paddled with seals, rays, sharks, humpback whales, loads of birds, and landed on many beautiful
+                secluded beaches – sometimes even managing to stay upright landing in the surf. We have now paddled a 135km section of the coast
+                (north of Ulladulla to south of Narooma).
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Seals at Wagonga Inlet." src="images/seals-wagonga-inlet-2.jpg" /></div>
+                <div class="image"><img alt="Clear Point." src="images/clear-point-from-near-snake-cove-2.jpg" /></div>
+            </div>
+
+            <p>The climate is very cooperative here, so when we weren't paddling, we were likely walking along the coast or in the hills, with a few road
+            trips up onto the Tablelands for rock climbing.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Point Upright." src="images/sandy-point-upright-3.jpg" /></div>
+                <div class="image"><img alt="Near Pretty Beach." src="images/sandy-pretty-beach-rock-platform.jpg" /></div>
+            </div>
+
+            <p>
+                Probably the thing we miss most about being homeless and always travelling is a social group – it is always just the two of us, and
+                as amazing as we are, we miss a sense of community. The local area reminds us of Nelson – we meet loads of like-minded folk who are
+                tree-hugging left-wing pinko commie bastards who have opted-out of the consumer culture and are still out there pushing hard doing the
+                things they love well into their 60s and 70s. We couldn’t keep up to the genetic mutant senior citizens on skis in Nelson, and we
+                can’t keep up to their paddling cousins here on the south coast.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Sandy descending The Castle." src="images/sandy-the-castle-north-ridge-meakins-pass.jpg" /></div>
+                <div class="image"><img alt="Sandy eying Mt Mooryan." src="images/sandy-mt-mooryan-arete.jpg" /></div>
+            </div>
+
+            <p>
+                Our house-sit is up on February 21, and then we’ll be hitting the road again, with plans to make it to the far north of Western
+                Australia by mid-winter. But who knows, we could end up anywhere.
+            </p>
+
+            <table class="image-row">
+                <tr>
+                    <td rowspan="2">
+                        <div class="image"><img alt="Wobbegong Notch." style="margin-right: 10px;" src="images/sandy-wobbegong-bay-notch.jpg" /></div>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <div class="image"><img alt="Black snake." src="images/black-snake-harrys-hut.jpg" /></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="image"><img alt="Murramarang National Park." src="images/grasshopper-island-clear-point-from-snapper-point.jpg" /></div>
+                    </td>
+                </tr>
+            </table>
+
+            <p>We wish you a merry Christmas and the very best in 2017.</p>
+
+            <div class="image-row">
+                <div class="image"><img src="images/doug-sandy.jpg" /></div>
+            </div>
+            <p style="text-align: center">
+                Doug &amp; Sandy.
+            </p>
+
+        </div>
+    </div>
+
+    <div id="div-zoom">
+        <div id="icon-close" class="icon-close"></div>
+        <img id="image-zoom" />
+    </div>
+</body>
+</html>
