@@ -26,14 +26,20 @@
 
                 $('#image-zoom').css('max-height', $(window).height() - 10);
                 $('#div-zoom').css('top', top).show();
+
+                return false;
             });
 
-            $('#div-zoom').click(function () {
-                $(this).hide();
+            $('#div-zoom, #icon-close').click(function () {
+                $('#div-zoom').hide();
+
+                return false;
             });
 
             $(document).keydown(function (event) {
                 $('#div-zoom').hide();
+
+                return false;
             });
         });
     </script>
@@ -52,7 +58,7 @@
 
             <p>For the first year in four, we had no extensive Australian travels. Late last year, as always, we had extensive and detailed plans 
             for the coming year, and also as always, those plans were abandoned shortly thereafter. To date, our favourite all-round Aussie 
-            location is the NSW south coast, around 150-200 km south of Sydney – it ticks all the boxes: beautiful warm water coastline, temperate 
+            location is the NSW south coast, around 150-200 km south of Sydney &ndash; it ticks all the boxes: beautiful warm water coastline, temperate 
             climate, away from the city, with easy access to sea kayaking, bush walking, and rock climbing. So when a year-long house-sit came 
             available in this area, it was too tempting to pass up. In the middle of February we moved into a lovely rural home just south of the 
             small town of Moruya on the NSW south coast.</p>
