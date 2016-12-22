@@ -24,6 +24,7 @@
                     top = $(window).height() - $div.height();
                 var top = Math.max(document.body.scrollTop, top + document.body.scrollTop);
 
+                $('#image-zoom').css('max-height', $(window).height() - 10);
                 $('#div-zoom').css('top', top).show();
             });
 

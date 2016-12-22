@@ -94,6 +94,7 @@ div.floating-button div.icon {
     position: absolute;
     z-index: 101;
     max-width: 100%;
+    max-height: 100%;
     left: 0;
     transform: translateX(50%);
 }
@@ -102,6 +103,7 @@ div.floating-button div.icon {
     border: 5px solid white;
     width: initial;
     max-width: calc(100% - 10px);
+    max-height: calc(100% - 10px);
     margin: 0;
 }
 
