@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    
+    <style>
+        .row-label {
+            vertical-align: top;
+        }
+    </style>
+    <title>Robin Favour #386</title>
+
+    <script>
+        function parse() {
+            var input = document.getElementById('input').value;
+            // RE to split up the string around the anchor tags.
+            var re = /(<a.*?\/a>)/g;
+            // RE to parse a single <a>
+
+            var reA = /<a.*(href="{0,1})(.*?)"{0,1}\s*?>(.*?)<\/a>/;
+            var matches = input.split(re);
+            var output = "";
+            // Each match is either arbitrary text or an <a>
+            for (var i = 0; i < matches.length; ++i) {
+                var a = reA.exec(matches[i]);
+                // If <a>, parse out href, and skip over .jpg links.
+                if (a && !a[2].endsWith('.jpg'))
+                    output += '[a href="' + a[2] + '"]' + a[3] + '[/a]';
+                else
+                    output += matches[i];
+            }
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h1>Regex'ing for gold</h1>
+
+    <table>
+        <tr>
+            <td class="row-label">Input:</td>
+            <td><textarea id="input" cols="80" rows="10">This should match:
+<a href="http://SomeWebsite.com">click here</a>
+
+But not this:
+
+<a href="myPhoto.jpg">click here</a></textarea></td>
+        </tr>
+        <tr><td colspan="2" style="text-align: center"><button onclick="parse() ">Parse</button></td></tr>
+        <tr>
+            <td class="row-label">Output:</td>
+            <td><textarea id="output" cols="80" rows="10" disabled></textarea></td>
+            </tr>
+</table>
+</body>
+</html>
