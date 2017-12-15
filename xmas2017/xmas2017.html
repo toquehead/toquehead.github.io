@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasons Greetings from Sandy and Doug</title>
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link href="xmas2017.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../scripts/jquery-3.1.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div#letter img').each(function (i, img) {
+                img.title = "Click to expand.";
+                var alt = img.getAttribute('alt');
+                if (alt)
+                    $(img).after('<p class="caption">' + alt + '</p>');
+            });
+            
+            $('div.image img').click(function (event) {
+                var $img = $('#image-zoom');
+                $img.prop('src', this.src);
+
+                var $div = $('#div-zoom');
+                var top = event.clientY - $div.height() / 2;
+                if (top + $div.height() > $(window).height())
+                    top = $(window).height() - $div.height();
+                var scrollTop = $(document).scrollTop();
+                var top = Math.max(scrollTop, top + scrollTop);
+
+                var left = Math.max(0, ($(window).width() - $div.width()) / 2)
+                $('#image-zoom').css('max-height', $(window).height() - 10);
+                $('#div-zoom').css({ top: top, left: left }).show();
+
+                return false;
+            });
+
+            // IE and Edge scroll to bottom after closing if done the JQuery way. Oh how I hate M$ ...
+            document.getElementById('icon-close').addEventListener('click', function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+
+            $('#div-zoom').click(function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+
+            $(document).keydown(function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="letter-container">
+        <div id="letter">
+            <h1>Seasons Greetings from Sandy and Doug</h1>
+
+            <p>2017 is slipping through our fingers as quickly as a rational thought slides off the 
+            <a href="https://twitter.com/realDonaldTrump" target="_blank">angry orange man's</a> cerebral cortex. 
+            That means it is time for Doug and I to wish you all health, happiness, and sustainability for 2018. We hope you enjoy a 
+            few pictures and stories from our last year, but we would get greater pleasure from hearing about your 2017, so please send 
+            us your Christmas letters and pictures.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Wild islands off the Queensland coast." src="images/keswick-carlisle-from-cockermouth-s.jpg" /></div>
+            </div>
+
+            <p>March was extraordinarily rainy in eastern Australia, and it wasn't until the end of March that we got away in our caravan 
+            again. We paddled out to <a href="https://www.youtube.com/watch?v=j45kaHN7nOE" target="_blank">Broughton Island</a>, a favorite with sea kayakers, 
+            then detoured south to climb, <a href="https://www.youtube.com/watch?v=89hu8pQC2Js" target="_blank">canyon</a> and 
+            <a href="http://theconspiracytimes.blogspot.com.au/2017/06/walking-around-wolgan.html" target="_blank">bushwalk</a> in the Blue Mountains World Heritage area.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Doug in pagoda country, Blue Mountains area." src="images/pagodas_doug.jpg" /></div>
+            </div>
+
+            <p>Heading north we visited a series of wonderful National Parks in northern NSW where we descended into 
+            <a href="http://theconspiracytimes.blogspot.com.au/2017/06/oxley-wild-rivers-national-park.html" target="_blank">steep sided rock canyons</a>, 
+            followed <a href="http://theconspiracytimes.blogspot.com.au/2017/06/walking-with-wild-horses-guy-fawkes.html" target="_blank">brumby paths</a> 
+            along meandering rivers, and walked beside 
+            <a href="http://theconspiracytimes.blogspot.com.au/2017/06/the-warrumbungles-camp-pincham-goulds.html" target="_blank">precipitous rocky spires</a>.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Deep in Oxley Wild Rivers National Park." src="images/doug_scrambling_pools.jpg" /></div>
+            </div>
+
+            <p>Queensland was mostly about <a href="https://www.youtube.com/watch?v=_twlsMJVu-w&t=35s" target="_blank">sea kayaking</a>. Over a series of 
+            multi-day trips with different groups of friends we covered around <a href="https://www.youtube.com/watch?v=kCV73Vxz2N0&t=3s" target="_blank">800 km of coastline</a>, 
+            with literally hundreds of humpback whale sightings.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Whoa!" src="images/whale_breach_oct_22.jpg" /></div>
+            </div>
+
+            <p>Our earth is precious, as is our health, look after both in 2018.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Looking down on kayak camp." src="images/curtis_camp_from_north_early_morning.jpg" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div-zoom">
+        <div id="icon-close" class="icon-close"></div>
+        <img id="image-zoom" />
+    </div>
+</body>
+</html>
