@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seasons Greetings from Sandy and Doug</title>
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link href="xmas2018.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../scripts/jquery-3.1.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div#letter img').each(function (i, img) {
+                img.title = "Click to expand.";
+                var alt = img.getAttribute('alt');
+                if (alt)
+                    $(img).after('<p class="caption">' + alt + '</p>');
+            });
+            
+            $('div.image img').click(function (event) {
+                var $img = $('#image-zoom');
+                $img.prop('src', this.src);
+
+                var $div = $('#div-zoom');
+                var top = event.clientY - $div.height() / 2;
+                if (top + $div.height() > $(window).height())
+                    top = $(window).height() - $div.height();
+                var scrollTop = $(document).scrollTop();
+                var top = Math.max(scrollTop, top + scrollTop);
+
+                var left = Math.max(0, ($(window).width() - $div.width()) / 2)
+                $('#image-zoom').css('max-height', $(window).height() - 10);
+                $('#div-zoom').css({ top: top, left: left }).show();
+
+                return false;
+            });
+
+            // IE and Edge scroll to bottom after closing if done the JQuery way. Oh how I hate M$ ...
+            document.getElementById('icon-close').addEventListener('click', function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+
+            $('#div-zoom').click(function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+
+            $(document).keydown(function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="letter-container">
+        <div id="letter">
+            <h1>Seasons Greetings from Doug and Sandy</h1>
+
+            <p>Another trip around our star, and another Christmas letter from Doug and Sandy.</p>
+
+            <p>
+                For us, it was a year of the usual stuff, and some not so usual stuff. After taking a break from house hunting in January, we returned to the NSW South Coast to resume
+                the search for a place to call home, which meant the usual heading out with the tribe in the kayaks exploring caves ...
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Doug in the Blue Cave." src="images/doug-blue-cave.jpg" /></div>
+                <div class="image"><img alt="&quot;The Cathedral&quot;." src="images/cathedral-2.jpg" /></div>
+            </div>
+
+            <p>... and our beautiful coast.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Beecroft Peninsula." src="images/rae-greg-beecroft-3.jpg" /></div>
+                <div class="image"><img alt="Bunga Head." src="images/tony-rae-john-bunga-head.jpg" /></div>
+            </div>
+
+            <p>
+                The house hunting adventure was a long drawn out and excruciatingly painful affair. By the time Antipidean autumn came around, we'd just about had enough, so
+                ventured off for some adventures a bit further afield. We had long aspired to paddle around the stunning Wilsons Promitory, the rugged granite cape that is the
+                southern most point of mainland Australia, and is infamous for its 
+                fearsome weather. In March, with three other members of the tribe, we had a
+                <a href="http://theconspiracytimes.blogspot.com/2018/04/hardly-promenade-around-wilsons.html">grand adventure</a> around The Prom.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Glassy conditions at The Prom ... enjoyable while it lasted." src="images/sandy-neil-sea-eagle-bay-wilsons-prom.jpg" /></div>
+                <div class="image"><img alt="Five days of gusts over 50 knots. Really." src="images/rabbit-island-from-sealers-lookout.jpg" /></div>
+            </div>
+
+            <p>
+                Later in the fall, a weather window opened up for the mystical <a href="http://theconspiracytimes.blogspot.com/2018/05/kayaking-nadgee-wilderness-coast.html" target="_blank">
+                    Nadgee
+                </a>, a wild and beautiful coast reveered by ocean kayakers. We nipped off
+                with our good mate Snoady for a magnificent trip in ideal conditions: NSW's best multi-day ocean kayak trip.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Chilly morning at Nadgee River." src="images/mike-sandy-launch-nadgee-river.jpg" /></div>
+                <div class="image"><img alt="Seals at Gabo Island." src="images/gabo-underwater-seals.jpg" /></div>
+            </div>
+            <div class="image-row">
+                <div class="image"><img alt="Camp at Mowarry." src="images/mike-cape-mowarry.jpg" /></div>
+                <div class="image"><img alt="Nadgee River." src="images/nadgee-river.jpg" /></div>
+            </div>
+
+            <p>
+                And then, after 8 months of real estate shopping, just when we'd pretty much given up, we found a house that ticked off enough
+                of the boxes that we bought it a few days later.
+                It's a lovely little brick and siding house, with high ceilings to take in the sunny exposure and our small but productive garden.
+                We can trolley our kayaks down to the beach in 5 minutes and ride our mountain bikes to the local
+                single track in 20 minutes. We are as close to NSW's best rock climbing as we can get without being too near the sprawling
+                stressed-out metropolis known as Sydney. Our house backs onto a reserve with towering spotted gums that is stuffed with bower birds,
+                blue tongued lizards, and all manner of parrots.
+                We are truly blessed with a wonderful group of characters in our tribe and are enthralled with our new place in life.
+            </p>
+
+            <div class="image-row">
+                <table class="image-row">
+                    <tr>
+                        <td rowspan="2">
+                            <div class="image"><img alt="Spotted Gum." src="images/spotted-gum.jpg" /></div>
+                        </td>
+                        <td style="vertical-align: top">
+                            <div class="image"><img alt="Bower Bird." src="images/bower-bird.jpg" /></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="vertical-align: bottom">
+                            <div class="image"><img alt="Rainbow Lorikeets." src="images/rainbow-lorikeets.jpg" /></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="image-row">
+                <div class="image"><img alt="Launching the kayak from Sunshine Bay." src="images/kayak-sunshine-bay.jpg" /></div>
+                <div class="image"><img alt="House." src="images/house.jpg" /></div>
+            </div>
+
+            <p>And then we did something <i>really</i> crazy. We went skiing. In Australia. And it was good! We're not talking blower pow here, but 
+            we had a great time rolling through the high country on a solid 2 m pack. The perfect corn snow made for sweet descents ... if only 
+            they were a bit longer.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="The &quot;Main Range&quot;." src="images/sandy-northcote-abbott-townsend.jpg" /></div>
+                <div class="image"><img alt="Camp above Carruthers Creek." src="images/sandy-twynam-camp-carruthers-creek.jpg" /></div>
+            </div>
+
+            <p>We wish you a frightfully pleasant holiday season and a super fantastic 2019.</p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Merry Christmas from Doug & Sandy!" src="images/doug-sandy-at-sea.jpg" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div-zoom">
+        <div id="icon-close" class="icon-close"></div>
+        <img id="image-zoom" />
+    </div>
+</body>
+</html>
