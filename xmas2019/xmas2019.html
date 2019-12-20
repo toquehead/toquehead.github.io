@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doug and Sandy's 2019 Christmas Letter</title>
+    <link rel="icon" type="image/png" href="images/kumo_favicon.png" />
+    <link href="xmas2019.css" type="text/css" rel="stylesheet" />
+
+    <script type="text/javascript" src="../scripts/jquery-3.1.0.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('div#letter img').each(function (i, img) {
+                img.title = "Click to expand.";
+                var alt = img.getAttribute('alt');
+                if (alt)
+                    $(img).after('<p class="caption">' + alt + '</p>');
+            });
+            
+            $('div.image img').click(function (event) {
+                var $img = $('#image-zoom');
+                $img.prop('src', this.src);
+
+                var $div = $('#div-zoom');
+                var top = event.clientY - $div.height() / 2;
+                if (top + $div.height() > $(window).height())
+                    top = $(window).height() - $div.height();
+                var scrollTop = $(document).scrollTop();
+                var top = Math.max(scrollTop, top + scrollTop);
+
+                var left = Math.max(0, ($(window).width() - $div.width()) / 2)
+                $('#image-zoom').css('max-height', $(window).height() - 10);
+                $('#div-zoom').css({ top: top, left: left }).show();
+
+                return false;
+            });
+
+            // IE and Edge scroll to bottom after closing if done the JQuery way. Oh how I hate M$ ...
+            document.getElementById('icon-close').addEventListener('click', function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+
+            $('#div-zoom').click(function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+
+            $(document).keydown(function (event) {
+                $('#div-zoom').hide();
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="letter-container">
+        <div id="letter">
+            <h1>Doug and Sandy's 2019 Christmas Letter</h1>
+
+            <p>
+                Getting started on our annual Christmas Greetings letter was as hard as it's ever been this year.  Not because
+                we had a bad year or there was nothing to say, more because, as I write this, our beautiful coastal community is
+                engulfed in bush-fire smoke as all across Australia uncontrolled fires are burning in forests, parks, reserves,
+                neighbourhoods and communities.  It is hard to imagine anyone unaffected.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Pebbly Beach sunset." src="images/depot_pebbly_sunset.jpg" /></div>
+            </div>
+
+            <p>
+                But then we remembered all our amazing and inspiring friends with whom we had shared a ski, a climb, a hike or a paddle,
+                and we thought that is how we should remember 2019.  Not as the year the world became run by
+                <a href="https://www.theshovel.com.au/2019/07/23/world-now-run-entirely-by-idiots/">idiots</a> but the year of ordinary people doing extraordinary things.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Wildey on the Snowy." src="images/wildey_georges_air.jpg" /></div>
+            </div>
+
+            <p>
+                In January, with six kayaking friends, we paddled from Little Musselroe Bay on the NE tip of Tasmania across Banks Strait to the Furneaux Group where we spent
+                a couple of weeks paddling from island to island.  We had hot weather, strong winds, exciting sailing, tidal rapids, and big, big black snakes.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Sailing to Badger Island." src="images/sailing_to_badger.jpg" /></div>
+            </div>
+
+            <p>
+                March took us across to Canada, where we spent the next five months, skiing, climbing, hiking and catching up with friends.  Backcountry skiing is our
+                most favourite sport but you certainly earn your turns in British Columbia, especially out in the Coast Mountains where the approaches are long,
+                frequently bushy, desperately steep, and that is just getting out of the car park!
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Garibaldi Névé." src="images/pyramid_spire_doug.jpg" /></div>
+            </div>
+
+            <p>
+                Skiing up Mount Garibaldi and Mount Baker, a couple of peaks that had long been on our "tick list" was both rewarding and beautiful.  We also did a six day
+                ski traverse with three very good friends across the Tenquille Range.  We were all a few years older than our last trip together, but we had a fabulous time
+                and even skied up a few peaks along the way.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Summit of Mt Baker." src="images/doug_baker.jpg" /></div>
+            </div>
+
+            <p>
+                Our Honda Odyssey minivan with a rudimentary camper conversion was the perfect stealth camping vehicle for trips to the USA and across Western Canada.
+                We climbed in Skaha with good friends, in their 70's now but still climbing in the 5.10's (Ewebank 18).  In Nelson, we caught up with the legendary Mutch
+                and climbed at his newly developed crag.  Around Squamish, we actually felt pretty normal for the first time in our lives, living in a car and climbing at the local crags.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Van camping below Baker." src="images/van_camp.jpg" /></div>
+            </div>
+
+            <p>
+                Somehow we managed to ease our low clearance two wheel drive vehicle up logging roads in the Coast Mountains and did hiking traverses around the Downton Creek and Roe Creek
+                areas where we camped beside alpine lakes and scrambled up rocky peaks.  The weather was mostly very Canadian, with rain and sleet driven by the wind!
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Camp above Downton Creek." src="images/camp_two_doug.jpg" /></div>
+            </div>
+
+            <p>
+                In the same vein, we spent 7 days backpacking through the Pasayten Wilderness near the BC border but in the US.  We averaged two peaks a day and enjoyed a series of secluded campsites all to ourselves.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Pasayten." src="images/pasayten_doug.jpg" /></div>
+            </div>
+
+            <p>
+                There were good days rock climbing around Mazama and some excellent alpine hiking up in the Cascade Range.  Of course, we got on some multi-pitch
+                routes both in the US and around the Rocky Mountains where we climbed some easy but scenic routes and others that were more appropriately graded.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Lake Ann circuit in the Cascades." src="images/doug_cascade.jpg" /></div>
+            </div>
+            <p>
+                Whilst staying with Doug's family in West Vancouver, to visit with family &ndash; big shout out to Guy and Vanda for letting us live in the basement &ndash;
+                we did a number of trips up into the local mountains, including climbing West Lion &ndash; another peak on Doug's tick list &ndash; rambling along the
+                Howe Sound Crest Trail and a three day traverse around Seymour Provincial Park with our good friends Robin and Betsy.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Summit of West Lion." src="images/doug_west_lion.jpg" /></div>
+            </div>
+            <p>
+                Back in Australia, in a complete change of pace, we did a three day whitewater kayaking trip down the iconic Snowy River in Victoria.  This is a trip we had dreamed about for years,
+                and thanks to our good friend, and excellent mentor, Wildey, we caught a big dam release and paddled the river in November.  It was so much fun, the lads went back and paddled the upper Snowy a few weeks later.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Snowy River, Byadbo Wilderness." src="images/snowy2.jpg" /></div>
+            </div>
+            <p>
+                So, to all our dear family and friends, whether we shared an adventure with you this year or not, we wish you the very best for 2020.  May your snow be deep and your rivers rapid.
+            </p>
+
+            <div class="image-row">
+                <div class="image"><img alt="Sandy and Doug" src="images/doug_sandy.jpg" /></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div-zoom">
+        <div id="icon-close" class="icon-close"></div>
+        <img id="image-zoom" />
+    </div>
+</body>
+</html>
