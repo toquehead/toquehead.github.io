@@ -27,25 +27,33 @@ $(document).ready(function () {
         $('div.item a').each(function () { $(this).attr('target', '_blank'); });
     }
     else {
-        // Process link clicks
-        $('#links div.item a').on('click', function (e) {
-            // If target specified, let browser handle it.
-            if (this.target)
-                return true;
-
-            // If Ctrl pressed, or Willy Weather URL (units don't work in iFrame) load in new tab/window
-            if (e.ctrlKey || this.href.indexOf("willyweather.com.au") >= 0) {
-                // Temporarily set target and let browser open tab/window.
-                this.target = '_blank';
-                setTimeout(() => this.target = '', 0);
-                return true;
-            }
-
-            // Otherwise load link into iFrame.
-            $('#target-iframe').prop('src', this.href);
-            return false;
+        // As of v117.0.0.0 Chrome is forcing BOM http pages to https inside iframe. Fuckers. 
+        // And Willy Weather units don't work in an iframe.
+        var bChrome = navigator.userAgent.indexOf('Chrome') >= 0 && location.protocol === 'https:';
+        $('div.item a').each(function () {
+            if ((bChrome && this.href.substr(0, 5) != 'https') || this.href.indexOf("willyweather.com.au") >= 0)
+                $(this).attr('target', '_blank');
         });
     }
+
+    // Process link clicks
+    $('#links div.item a').on('click', function (e) {
+        // If target specified, let browser handle it.
+        if (this.target)
+            return true;
+
+        // If Ctrl pressed, load in new tab/window.
+        if (e.ctrlKey) {
+            // Temporarily set target and let browser open tab/window.
+            this.target = '_blank';
+            setTimeout(() => this.target = '', 0);
+            return true;
+        }
+
+        // Otherwise load link into iFrame.
+        $('#target-iframe').prop('src', this.href);
+        return false;
+    });
 
     // Wire up index expand/collapse
     $('#links').on('click', 'div.group-toggle, div.group-name', function (e) {
