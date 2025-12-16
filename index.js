@@ -38,6 +38,10 @@ $(document).ready(function () {
 
     // Process link clicks
     $('#links div.item a').on('click', function (e) {
+        // Pop out all BOM links
+        if (this.target != '_blank' && this.href.indexOf('bom.gov.au') >= 0)
+            this.target = '_blank';
+
         // If target specified, let browser handle it.
         if (this.target)
             return true;
