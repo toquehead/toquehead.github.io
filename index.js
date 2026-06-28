@@ -26,21 +26,26 @@ $(document).ready(function () {
         $('#index').width('100%');
         $('div.item a').each(function () { $(this).attr('target', '_blank'); });
     }
-    else {
-        // As of v117.0.0.0 Chrome is forcing BOM http pages to https inside iframe. Fuckers. 
-        // And Willy Weather units don't work in an iframe.
-        var bChrome = navigator.userAgent.indexOf('Chrome') >= 0 && location.protocol === 'https:';
-        $('div.item a').each(function () {
-            if ((bChrome && this.href.substr(0, 5) != 'https') || this.href.indexOf("willyweather.com.au") >= 0)
-                $(this).attr('target', '_blank');
-        });
-    }
 
     // Process link clicks
+    const hasUnlocker = document.documentElement.hasAttribute('data-iframe-unlocker');
+
     $('#links div.item a').on('click', function (e) {
-        // Pop out all BOM links
-        if (this.target != '_blank' && this.href.indexOf('bom.gov.au') >= 0)
-            this.target = '_blank';
+        if (hasUnlocker) {
+            // With unlocker, blank => null.
+            if (this.target == 'blank')
+                this.removeAttribute('target');
+        }
+        else {
+            if (this.target != '_blank' && this.href.indexOf('bom.gov.au') >= 0) {
+                // Pop out all BOM links
+                this.target = '_blank';
+            }
+            else if (this.target == 'blank') {
+                // Without unlocker, blank => _blank.
+                this.target = '_blank';
+            }
+        }
 
         // If target specified, let browser handle it.
         if (this.target)
@@ -56,6 +61,7 @@ $(document).ready(function () {
 
         // Otherwise load link into iFrame.
         $('#target-iframe').prop('src', this.href);
+
         return false;
     });
 
